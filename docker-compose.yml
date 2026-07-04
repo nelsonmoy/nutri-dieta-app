@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  nutri-app:
+    build: .
+    container_name: nutri_dieta_app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./database.db:/app/database.db
+    restart: unless-stopped

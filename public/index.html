@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="manifest" href="manifest.json" />
+  <title>Mi Dieta</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>Mi Dieta</header>
+
+  <main class="page">
+    <section class="controls">
+      <select id="usuario">
+        <option value="nelson">Nelson</option>
+      </select>
+      <select id="tiempo">
+        <option value="desayuno">Desayuno</option>
+        <option value="comida">Comida</option>
+        <option value="cena">Cena</option>
+      </select>
+      <button id="ver-btn" type="button">Ver</button>
+    </section>
+
+    <section id="estado" class="estado" aria-live="polite"></section>
+    <section class="workspace">
+      <aside class="workspace-panel workspace-panel-left">
+        <div class="panel-stack">
+          <section id="validation" class="validation hidden" aria-live="polite"></section>
+        </div>
+      </aside>
+
+      <section class="workspace-panel workspace-panel-center">
+        <div class="panel-stack">
+          <section id="cards" class="cards"></section>
+        </div>
+      </section>
+
+      <aside class="workspace-panel workspace-panel-right">
+        <div class="panel-stack">
+          <section id="summary" class="summary hidden">
+            <div class="summary-header">
+              <h2>Resumen</h2>
+              <div class="summary-actions">
+                <input id="menu-title" type="text" placeholder="Nombre del menu" />
+                <button id="actualizar-resumen" type="button">Actualizar</button>
+                <button id="guardar-resumen" type="button">Guardar</button>
+              </div>
+            </div>
+            <div id="summary-content"></div>
+          </section>
+
+          <section id="saved-summary" class="saved-summary hidden">
+            <div class="saved-summary-header">
+              <h2>Ultimo resumen guardado</h2>
+              <span id="saved-summary-date" class="saved-summary-date"></span>
+            </div>
+            <div id="saved-summary-content"></div>
+          </section>
+
+          <section id="history" class="history hidden">
+            <div class="history-header">
+              <h2>Menus guardados</h2>
+              <span id="history-count" class="history-count"></span>
+            </div>
+            <div id="history-content"></div>
+          </section>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-work.js");
+    }
+  </script>
+</body>
+</html>

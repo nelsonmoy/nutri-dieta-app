@@ -1,0 +1,14 @@
+{
+  "name": "nutri-dieta-app",
+  "version": "1.0.0",
+  "description": "App de control de dieta",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "init-db": "node init-db.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.6.2",
+    "express": "^4.18.2"
+  }
+}
