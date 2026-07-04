@@ -14,7 +14,9 @@ npm start
 
 ## Other hand you can run the app with Docker
 
+### Building
 docker compose build
+### Setup
 docker compose up
 
 ## Stop the docker 
